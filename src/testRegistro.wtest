@@ -1,0 +1,61 @@
+import registroAbatidos.*
+
+
+describe "test"{
+	
+	method inicialize(){
+		const cant=[43,18,49,62,33,39]
+		const dias=[20221231,20230101,20230105,20230106,20230107,20230108]
+		registroCOD.agregarAbatidosVariosDias(cant , dias)
+	}
+	
+	test"1"{
+		assert.that(registroCOD.algunDiaAbatio(49))
+	}
+	 test"2"{
+		assert.notThat(registroCOD.algunDiaAbatio(52))
+	}
+	test"3"{
+		assert.equals(62, registroCOD.maximoValorDeAbatidos())
+	}
+	test"4"{
+		assert.equals([18,62] , registroCOD.valoresDeAbatidosPares())
+	}	
+	test"5"{
+		assert.that(registroCOD.abatidosEsAcotada(10,100))
+	}	
+	test"6"{
+		assert.notThat(registroCOD.abatidosEsAcotada(20,100))
+	}	
+	test"7"{
+		assert.equals([43,49,62,39] , registroCOD.diasConAbatidosSuperioresA(35))
+	}
+	test"8"{
+		assert.equals([48,23,54,67,38,44] , registroCOD.abatidosSumando(5))
+	}
+	test"9"{
+		assert.equals(244, registroCOD.totalAbatidos())
+	}
+	test"10"{
+		assert.equals(39, registroCOD.ultimoValorDeAbatidos())
+	}
+	test"11"{
+		assert.equals(2, registroCOD.cantidadAbatidosMayorALaPrimera())
+	}
+	test"12"{
+		assert.that(registroCOD.algunDiaAbatioMasDe(50))
+	}	
+	test"13"{
+		assert.notThat(registroCOD.todosLosDiasAbatioMasDe(30))
+	}
+	test"14"{
+		assert.notThat(registroCOD.esCrack())
+	}			
+}
+
+
+/*
+ test"1"{
+		assert.that(registroCOD.)
+	}
+ */
